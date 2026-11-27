@@ -23,11 +23,22 @@ En bref : une base classique retrouve souvent des correspondances exactes ou str
 
 {{% /expand %}}
 
-### Prompt #X : En quoi les bases de données vectorielles diffèrent des bases de données relationnelles/traditionnelles en général ?
+### Prompt #2 : En quoi les bases de données vectorielles diffèrent des bases de données relationnelles/traditionnelles en général ?
 
 {{% expand title="**Réponse de `duck.ai`**" %}}
 
-...
+La différence principale tient à **la façon dont on retrouve les données**.
+
+| Aspect | Base relationnelle (ex. SQL) | Base vectorielle |
+|---|---|---|
+| **Données privilégiées** | Lignes et colonnes structurées : clients, commandes, dates, montants | Vecteurs numériques représentant du texte, des images ou d’autres contenus |
+| **Recherche** | Conditions précises : égalité, intervalle, filtres, jointures | Similarité : éléments dont les vecteurs sont les plus proches d’une requête |
+| **Résultats** | Enregistrements qui satisfont exactement les critères | Résultats classés par proximité, parfois trouvés par une recherche approximative |
+| **Usages typiques** | Transactions, inventaires, comptes, rapports et relations entre entités | Recherche sémantique, recommandations et récupération de contexte pour l’IA |
+
+Par exemple, une base relationnelle répond bien à **« commandes passées par ce client en octobre »**. Une base vectorielle aide plutôt à répondre à **« quels documents parlent de modifier un mot de passe ? »**, même si ces documents emploient d’autres termes. <citation src="1,2"></citation>
+
+**Elles ne se remplacent donc pas nécessairement** : une base relationnelle est souvent le bon choix pour les données opérationnelles et les requêtes exactes; une base vectorielle sert quand la recherche par similarité est importante. Un même système peut utiliser les deux, ou une base relationnelle dotée d’une extension de recherche vectorielle. <citation src="2,4"></citation>
 
 {{% /expand %}}
 
