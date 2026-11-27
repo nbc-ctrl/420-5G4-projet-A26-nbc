@@ -42,11 +42,23 @@ Par exemple, une base relationnelle répond bien à **« commandes passées par 
 
 {{% /expand %}}
 
-### Prompt #X : Pourquoi utiliser une base de données vectorielles ? Dans quels contextes ?
+### Prompt #3 : Pourquoi utiliser une base de données vectorielles ? Dans quels contextes ?
 
 {{% expand title="**Réponse de `duck.ai`**" %}}
 
-...
+On utilise une base vectorielle quand on veut retrouver des éléments **par ressemblance de sens ou de contenu**, plutôt que par correspondance exacte. Elle est particulièrement utile si les gens formulent leurs recherches de façons différentes ou si les données sont difficiles à organiser en catégories fixes.
+
+Quelques contextes courants :
+
+- **Recherche sémantique** : retrouver des documents pertinents même s’ils n’emploient pas les mêmes mots que la requête.
+- **Assistants IA avec RAG** : chercher dans des documents internes ou spécialisés, puis fournir ces passages à un modèle pour qu’il réponde en s’appuyant dessus. Une base vectorielle peut aider, mais le RAG peut aussi combiner recherche par mots-clés et autres méthodes. <citation src="1,3"></citation>
+- **Recommandations** : proposer des articles, produits ou contenus proches d’un élément consulté ou des préférences d’un utilisateur.
+- **Recherche multimodale** : retrouver des images, sons ou textes similaires à un exemple fourni. <citation src="2,3"></citation>
+- **Détection de ressemblances** : repérer des doublons ou des éléments inhabituels par rapport à un ensemble de références.
+
+Ce n’est pas automatiquement le meilleur choix. Pour des requêtes exactes — retrouver une commande par son numéro, calculer un solde, gérer des transactions — une base relationnelle est généralement plus adaptée. Pour beaucoup d’applications, les deux se complètent : la base relationnelle conserve les données de référence, tandis que la recherche vectorielle sert à trouver des contenus pertinents. <citation src="2,5"></citation>
+
+En pratique, envisagez une base vectorielle si la recherche par sens apporte un bénéfice mesurable et si votre système existant ne répond pas déjà assez bien au besoin. Le modèle qui crée les vecteurs et la qualité de l’indexation influencent beaucoup la pertinence des résultats.
 
 {{% /expand %}}
 
