@@ -109,6 +109,12 @@ La requête peut donc associer **similarité vectorielle** et **filtres classiqu
 
 À noter : une recherche vectorielle renvoie des éléments **proches selon le modèle**, pas nécessairement la réponse exacte. Pour une recherche plus précise, on peut combiner vecteurs et mots-clés, puis éventuellement reclasser les résultats. <citation src="5"></citation>
 
+- Source # 1 : https://unstructured.io/insights/vector-embeddings-the-key-to-better-search-relevance
+
+- Source # 2 : https://www.pinecone.io/learn/vector-search-filtering/
+
+- Source # 3 : https://www.elastic.co/search-labs/blog/vector-search-filtering
+
 {{% /expand %}}
 
 ### Prompt #6 : Quand l'IA intervient-il dans cette technologie ?
@@ -124,13 +130,30 @@ L’IA intervient surtout **avant et autour de la base**, pas forcément dans la
 
 Donc, la base vectorielle sert principalement à **stocker et retrouver** les vecteurs; les modèles d’IA les créent et peuvent exploiter les résultats. Une recherche vectorielle peut aussi être utilisée sans modèle génératif, par exemple pour trouver des documents similaires.
 
+- Source # 1 : https://www.ibm.com/think/topics/rag-vector-database
+
+- Source # 2 : https://ubuntu.com/blog/hybrid-search-and-reranking-a-deeper-look-at-rag
+
 {{% /expand %}}
 
-### Prompt #X : Quel est le mécanisme derrière le _embedding_ ?
+### Prompt #7 : Quel est le mécanisme derrière le _embedding_ ?
 
 {{% expand title="**Réponse de `duck.ai`**" %}}
 
-...
+Pour du texte, un modèle d’embedding transforme une phrase en une liste de nombres qui sert de **représentation compacte** de son contenu. Le mécanisme, en simplifié :
+
+1. **Découpage en tokens** : le texte est séparé en mots ou fragments de mots.
+2. **Calcul par le modèle** : un réseau neuronal traite ces tokens et leur contexte, puis combine les informations apprises pendant son entraînement.
+3. **Production du vecteur** : le modèle renvoie une suite de nombres, par exemple `[0,12, -0,34, 0,56, …]`.
+4. **Comparaison** : on mesure la proximité entre vecteurs. Des textes qui se ressemblent selon ce que le modèle a appris tendent à être proches dans cet espace numérique. <citation src="1,2"></citation>
+
+Pendant l’entraînement, le modèle apprend à représenter les éléments utiles à sa tâche. Par exemple, des méthodes d’apprentissage rapprochent des éléments jugés similaires et éloignent ceux jugés différents. Les coordonnées du vecteur ne correspondent généralement pas à des étiquettes simples comme « sujet » ou « ton » : le sens est réparti dans l’ensemble du vecteur. <citation src="2"></citation>
+
+Une nuance importante : l’embedding ne constitue pas une compréhension humaine du texte. C’est une représentation numérique apprise; sa qualité dépend du modèle, de ses données d’entraînement et de la tâche visée. **Le même texte peut aussi produire des vecteurs différents selon le modèle utilisé.**
+
+- Source # 1 : https://developers.google.com/machine-learning/crash-course/embeddings
+
+- Source # 2 : https://stackoverflow.blog/2023/11/09/an-intuitive-introduction-to-text-embeddings/
 
 {{% /expand %}}
 

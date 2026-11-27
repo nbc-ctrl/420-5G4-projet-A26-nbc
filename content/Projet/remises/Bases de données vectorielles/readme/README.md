@@ -56,7 +56,7 @@ Avec Jupiter Notebook (au autre, à déterminer plus tard), faire une petite bas
 # Idées de sujet à explorer dans les notes de cours
 
 - Insertion de biais dans le embedding ?
-- Comparaison des BD traditionnelles vs BD vectorielles.
+- Comparaison des BD traditionnelles vs BD vectorielles (**_problèmes_** résolus).
 - Depuis quand existe les bases de données vectorielles ?
 - Explication des calculs sur les vecteurs effectués lors de la recherche.
 - Explication du processus :
