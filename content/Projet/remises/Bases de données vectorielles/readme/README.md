@@ -50,6 +50,9 @@ Avec Jupiter Notebook (au autre, à déterminer plus tard), faire une petite bas
  > Si cela ne suffit pas :
  Avant de faire la base de données vectorielles, simuler avec des maths simples avec python ce que l'IA fait avec la liste de données.
 
+  > Et si cela ne suffit pas :
+ Faire un exercice de préparation de données avant insertion dans la BD.
+
 # Idées de sujet à explorer dans les notes de cours
 
 - Insertion de biais dans le embedding ?
