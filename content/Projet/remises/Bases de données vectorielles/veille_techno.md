@@ -197,6 +197,28 @@ Enfin, la base peut appliquer des filtres — comme une catégorie, une date ou 
 
 {{% expand title="**Réponse de `duck.ai`**" %}}
 
-...
+Les mathématiques reposent surtout sur **la géométrie des vecteurs**, puis sur des méthodes pour chercher efficacement parmi beaucoup de vecteurs.
+
+1. **Représenter un élément par un point**  
+   Un embedding est un vecteur de \(d\) nombres, par exemple \(\mathbf{x}=(x_1,\ldots,x_d)\). On peut le voir comme un point dans un espace à \(d\) dimensions. Les dimensions n’ont généralement pas d’interprétation humaine simple.
+
+2. **Mesurer la proximité entre deux vecteurs**  
+   La base compare le vecteur de la question \(\mathbf{q}\) à ceux des documents. Les mesures courantes sont :
+   - **Distance euclidienne** : \(\|\mathbf{q}-\mathbf{x}\|_2\), la distance en ligne droite entre deux points.
+   - **Similarité cosinus** : \(\frac{\mathbf{q}\cdot\mathbf{x}}{\|\mathbf{q}\|\,\|\mathbf{x}\|}\), qui compare surtout leur direction.
+   - **Produit scalaire** : \(\mathbf{q}\cdot\mathbf{x}=\sum_i q_i x_i\), qui tient compte de l’alignement et de la longueur des vecteurs. <citation src="1,3"></citation>
+
+   La base classe les résultats selon la mesure choisie. Pour une distance, les valeurs les plus petites sont généralement préférées; pour une similarité, ce sont les plus grandes.
+
+3. **Trouver les meilleurs résultats**  
+   Le principe consiste à chercher les \(k\) vecteurs les plus proches — les *k plus proches voisins*. On peut comparer la requête à tous les vecteurs, ou utiliser un index approximatif qui explore moins de candidats pour accélérer la recherche, avec un compromis possible sur la précision. <citation src="1,4"></citation>
+
+La qualité du résultat dépend donc de deux choses : **la qualité des embeddings**, qui place les contenus dans cet espace, et **la mesure/index de recherche**, qui détermine quels voisins sont retournés. La proximité mathématique indique une ressemblance selon le modèle; elle ne garantit pas à elle seule que le résultat soit vrai ou pertinent.
+
+- Source # 1 : https://docs.cloud.google.com/spanner/docs/find-k-nearest-neighbors
+
+- Source # 2 : https://www.pinecone.io/learn/vector-similarity/
+
+- Source # 3 : https://weaviate.io/blog/distance-metrics-in-vector-search
 
 {{% /expand %}}
