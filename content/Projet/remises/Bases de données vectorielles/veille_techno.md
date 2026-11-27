@@ -21,6 +21,12 @@ En pratique, une base vectorielle peut aussi conserver des références au conte
 
 En bref : une base classique retrouve souvent des correspondances exactes ou structurées; une base vectorielle aide à retrouver des éléments **proches par leur représentation**, souvent par leur sens. Les deux approches peuvent être combinées.
 
+- Source # 1 : https://weaviate.io/blog/what-is-a-vector-database
+
+- Source # 2 : https://www.oracle.com/database/vector-search/
+
+- Source # 3 : https://labelbox.com/blog/how-vector-similarity-search-works/
+
 {{% /expand %}}
 
 ### Prompt #2 : En quoi les bases de données vectorielles diffèrent des bases de données relationnelles/traditionnelles en général ?
@@ -39,6 +45,12 @@ La différence principale tient à **la façon dont on retrouve les données**.
 Par exemple, une base relationnelle répond bien à **« commandes passées par ce client en octobre »**. Une base vectorielle aide plutôt à répondre à **« quels documents parlent de modifier un mot de passe ? »**, même si ces documents emploient d’autres termes. <citation src="1,2"></citation>
 
 **Elles ne se remplacent donc pas nécessairement** : une base relationnelle est souvent le bon choix pour les données opérationnelles et les requêtes exactes; une base vectorielle sert quand la recherche par similarité est importante. Un même système peut utiliser les deux, ou une base relationnelle dotée d’une extension de recherche vectorielle. <citation src="2,4"></citation>
+
+- Source # 1 : https://www.ibm.com/think/topics/rag-vector-database
+
+- Source # 2 : https://redis.io/blog/vector-database-use-cases/
+
+- Source # 3 : https://www.couchbase.com/blog/vector-database-use-cases-2/
 
 {{% /expand %}}
 
@@ -59,6 +71,12 @@ Quelques contextes courants :
 Ce n’est pas automatiquement le meilleur choix. Pour des requêtes exactes — retrouver une commande par son numéro, calculer un solde, gérer des transactions — une base relationnelle est généralement plus adaptée. Pour beaucoup d’applications, les deux se complètent : la base relationnelle conserve les données de référence, tandis que la recherche vectorielle sert à trouver des contenus pertinents. <citation src="2,5"></citation>
 
 En pratique, envisagez une base vectorielle si la recherche par sens apporte un bénéfice mesurable et si votre système existant ne répond pas déjà assez bien au besoin. Le modèle qui crée les vecteurs et la qualité de l’indexation influencent beaucoup la pertinence des résultats.
+
+- Source # 1 : https://unstructured.io/insights/vector-embeddings-the-key-to-better-search-relevance
+
+- Source # 2 : https://www.pinecone.io/learn/vector-search-filtering/
+
+- Source # 3 : https://www.elastic.co/search-labs/blog/vector-search-filtering
 
 {{% /expand %}}
 
@@ -84,6 +102,8 @@ document → passages → embeddings → {identifiant, vecteur, métadonnées} �
 ```
 
 Les appels précis dépendent de la base et de la bibliothèque choisies. Si vous me dites laquelle vous utilisez — par exemple PostgreSQL avec une extension vectorielle ou un service spécialisé — je peux montrer la forme d’insertion adaptée.
+
+- Source # 1 : https://docs.oracle.com/en/cloud/paas/autonomous-vector-database/vecdb/upsert-records.html
 
 {{% /expand %}}
 
@@ -157,7 +177,7 @@ Une nuance importante : l’embedding ne constitue pas une compréhension humain
 
 {{% /expand %}}
 
-### Prompt #X : Quel est le mécanisme derrière les recherches effectuées dans la base de données ?
+### Prompt #8 : Quel est le mécanisme derrière les recherches effectuées dans la base de données ?
 
 {{% expand title="**Réponse de `duck.ai`**" %}}
 
