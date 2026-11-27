@@ -43,3 +43,22 @@ Vous aurez un serveur web de test disponible à l'adresse http://127.0.0.1:1313/
 > [!TIP]
 > Le script `start_hugo.sh` peut vous servir d'inspiration si vous souhaitez exécuter votre container manuellement (hors de vscode).
 > L'image du script à été construite avec `docker build -t hugo_relearn .`
+
+# Idée générale du laboratoire
+
+Avec Jupiter Notebook (au autre, à déterminer plus tard), faire une petite base de données vectorielles, et créer une liste de données (images, sons, phrases), convertir les données en vecteurs, visualiser les vecteurs (observer les dimensions, et les voirs dans un graphique), et insérer les vecteurs dans la base de données, puis faire une recherche dans la liste de données par mots clés et ensuite faire une recherche dans la base de données vectorielles par recherche vectorielle.
+ > Si cela ne suffit pas :
+ Avant de faire la base de données vectorielles, simuler avec des maths simples avec python ce que l'IA fait avec la liste de données.
+
+# Idées de sujet à explorer dans les notes de cours
+
+- Insertion de biais dans le embedding ?
+- Comparaison des BD traditionnelles vs BD vectorielles.
+- Depuis quand existe les bases de données vectorielles ?
+- Explication des calculs sur les vecteurs effectués lors de la recherche.
+- Explication du processus :
+    - Insertion des données dans la BD
+    - Embedding
+    - Recherche
+    - Retour des données
+- Quand faut-il utiliser les bases de données vectorielles (quand est-ce nécessaire et quand est-ce superflus) ?
