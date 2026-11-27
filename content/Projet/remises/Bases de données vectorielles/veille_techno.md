@@ -181,7 +181,15 @@ Une nuance importante : l’embedding ne constitue pas une compréhension humain
 
 {{% expand title="**Réponse de `duck.ai`**" %}}
 
-...
+Quand une recherche est lancée, la base compare le **vecteur de la requête** aux vecteurs enregistrés et renvoie les plus proches selon une mesure choisie, par exemple la distance cosinus ou euclidienne. Elle associe ensuite ces vecteurs aux contenus correspondants (documents, images, métadonnées).
+
+Avec peu de données, elle peut comparer la requête à **tous** les vecteurs. À grande échelle, elle utilise souvent un index de recherche approximative pour examiner rapidement un sous-ensemble de candidats. Par exemple, HNSW navigue dans un graphe de vecteurs voisins; IVF répartit les vecteurs en groupes et cherche d’abord dans les groupes les plus prometteurs. Ces méthodes accélèrent la recherche, au prix possible de manquer certains voisins très proches. <citation src="3,4"></citation>
+
+Enfin, la base peut appliquer des filtres — comme une catégorie, une date ou un accès autorisé — puis classer les candidats et retourner les *k* meilleurs résultats. En résumé : **représenter la requête en vecteur → repérer des candidats proches → filtrer et classer → renvoyer les contenus associés**.
+
+- Source # 1 : https://fit.neu.edu.vn/en/post/hnsw-approximate-nearest-neighbor-search-for-vector-databases
+
+- Source # 2 : https://milvus.io/blog/understanding-ivf-vector-index-how-It-works-and-when-to-choose-it-over-hnsw.md
 
 {{% /expand %}}
 
