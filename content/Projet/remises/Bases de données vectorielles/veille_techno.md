@@ -111,11 +111,18 @@ La requête peut donc associer **similarité vectorielle** et **filtres classiqu
 
 {{% /expand %}}
 
-### Prompt #X : Quand l'IA intervient-il dans cette technologie ?
+### Prompt #6 : Quand l'IA intervient-il dans cette technologie ?
 
 {{% expand title="**Réponse de `duck.ai`**" %}}
 
-...
+L’IA intervient surtout **avant et autour de la base**, pas forcément dans la base elle-même :
+
+1. **À l’indexation**, un modèle d’IA transforme chaque texte, image ou autre contenu en vecteur (*embedding*).
+2. **À la recherche**, le même type de modèle transforme la question de l’utilisateur en vecteur. La base compare alors ce vecteur à ceux qu’elle stocke — cette comparaison de proximité est généralement un calcul mathématique, pas une réponse générée par l’IA.
+3. **Facultativement**, un autre modèle peut réordonner les résultats pour mieux faire ressortir les passages pertinents.
+4. **Dans un système RAG**, un modèle génératif peut ensuite lire les passages retrouvés et rédiger une réponse à partir de ceux-ci. <citation src="1,3"></citation>
+
+Donc, la base vectorielle sert principalement à **stocker et retrouver** les vecteurs; les modèles d’IA les créent et peuvent exploiter les résultats. Une recherche vectorielle peut aussi être utilisée sans modèle génératif, par exemple pour trouver des documents similaires.
 
 {{% /expand %}}
 
