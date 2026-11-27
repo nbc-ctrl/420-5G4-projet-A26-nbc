@@ -62,11 +62,28 @@ En pratique, envisagez une base vectorielle si la recherche par sens apporte un 
 
 {{% /expand %}}
 
-### Prompt #X : Comment insere-t-on des données dans une base de données vectorielles ?
+### Prompt #4 : Comment insere-t-on des données dans une base de données vectorielles ?
 
 {{% expand title="**Réponse de `duck.ai`**" %}}
 
-...
+Le plus souvent, on n’insère pas seulement le texte brut : on le transforme d’abord en **vecteur (embedding)**, puis on enregistre ce vecteur avec un identifiant et, éventuellement, le texte ou des métadonnées associées.
+
+Le processus typique est le suivant :
+
+1. **Préparer les données** : nettoyer les documents et, s’ils sont longs, les découper en passages cohérents.
+2. **Créer les embeddings** : envoyer chaque passage à un modèle d’embeddings, qui renvoie une liste de nombres. Le même modèle doit ensuite servir à vectoriser les requêtes de recherche.
+3. **Enregistrer les enregistrements** : transmettre à la base un identifiant stable, le vecteur et les métadonnées utiles — par exemple le titre, la source, la date ou les droits d’accès. Le texte peut être conservé dans les métadonnées ou dans une autre base, liée par l’identifiant.
+4. **Insérer ou mettre à jour** : beaucoup de systèmes proposent une opération appelée *upsert*; elle ajoute un enregistrement ou met à jour celui qui porte déjà le même identifiant. <citation src="1"></citation>
+
+Pour un document découpé en passages, chaque passage reçoit généralement son propre identifiant et son propre vecteur. Il faut aussi prévoir comment supprimer ou actualiser les anciens passages lorsque le document source change.
+
+Schématiquement :
+
+```text
+document → passages → embeddings → {identifiant, vecteur, métadonnées} → base vectorielle
+```
+
+Les appels précis dépendent de la base et de la bibliothèque choisies. Si vous me dites laquelle vous utilisez — par exemple PostgreSQL avec une extension vectorielle ou un service spécialisé — je peux montrer la forme d’insertion adaptée.
 
 {{% /expand %}}
 
