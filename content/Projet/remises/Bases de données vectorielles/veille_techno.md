@@ -87,11 +87,27 @@ Les appels précis dépendent de la base et de la bibliothèque choisies. Si vou
 
 {{% /expand %}}
 
-### Prompt #X : Comment fait-on des requêtes auprès de base de données vectorielles ?
+### Prompt #5 : Comment fait-on des requêtes auprès de base de données vectorielles ?
 
 {{% expand title="**Réponse de `duck.ai`**" %}}
 
-...
+Une requête vectorielle suit généralement ces étapes :
+
+1. **Transformer la question en vecteur** avec le même modèle d’embeddings que celui utilisé pour indexer les données.
+2. **Chercher les vecteurs les plus proches** dans la base, selon une mesure comme la similarité cosinus ou la distance euclidienne.
+3. **Limiter et filtrer les résultats** : par exemple, demander les 5 passages les plus pertinents (`top_k = 5`) dans une catégorie ou une période donnée.
+4. **Récupérer les contenus associés** — texte, identifiant et métadonnées — puis, si nécessaire, les transmettre à une autre étape, comme un modèle génératif. <citation src="5"></citation>
+
+Schématiquement :
+
+```text
+question → embedding de la question → recherche des voisins proches
+         → top-k résultats + filtres → contenus correspondants
+```
+
+La requête peut donc associer **similarité vectorielle** et **filtres classiques** : « trouve les passages proches de cette question, mais seulement dans les documents publiés cette année ». Les filtres peuvent être appliqués avant ou pendant la recherche, selon la base; leur prise en charge et leur effet sur le nombre de résultats varient. <citation src="1,2"></citation>
+
+À noter : une recherche vectorielle renvoie des éléments **proches selon le modèle**, pas nécessairement la réponse exacte. Pour une recherche plus précise, on peut combiner vecteurs et mots-clés, puis éventuellement reclasser les résultats. <citation src="5"></citation>
 
 {{% /expand %}}
 
